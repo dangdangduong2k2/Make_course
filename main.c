@@ -1,4 +1,3 @@
-#include "hieu.h"
 #include "tong.h"
 int o;
 int main(void)
