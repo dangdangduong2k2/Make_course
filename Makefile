@@ -20,3 +20,5 @@ clear:
 	rm ./$(OBJ_PATH)/*.o
 	rm ./$(BIN_PATH)/*.exe
 	echo "clear done!"
+log-%:
+	@echo $($(subst log-,,$@))
