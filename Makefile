@@ -9,6 +9,8 @@ SCR_PATH := $(PRO_DIR)/scr
 vpath %.c $(SCR_PATH)
 vpath %.h $(INC_PATH)
 
+all_file_in_inc := $(wildcard $(INC_PATH)/*)
+
 build: main.o tong.o 
 	gcc $(OBJ_PATH)/main.o $(OBJ_PATH)/tong.o -o $(BIN_PATH)/app.exe
 	echo "build done!"
@@ -21,4 +23,4 @@ clear:
 	rm ./$(BIN_PATH)/*.exe
 	echo "clear done!"
 log-%:
-	@echo $($(subst log-,,$@))
+	@echo $($(subst log-,,$@)) 
