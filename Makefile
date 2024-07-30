@@ -11,6 +11,13 @@ vpath %.h $(INC_PATH)
 
 all_file_in_inc := $(wildcard $(INC_PATH)/*)
 
+sources := $(BIN_PATH)
+sources += $(OBJ_PATH)
+sources += $(INC_PATH)
+sources += $(SCR_PATH)
+
+all_file_in_project := $(foreach sources, $(sources), $(wildcard $(sources)/*) )
+
 build: main.o tong.o 
 	gcc $(OBJ_PATH)/main.o $(OBJ_PATH)/tong.o -o $(BIN_PATH)/app.exe
 	echo "build done!"
